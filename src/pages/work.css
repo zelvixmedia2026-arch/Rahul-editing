@@ -1,0 +1,620 @@
+/* =========================
+   WORK PAGE
+========================= */
+
+.work-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #0d3f42;
+  color: #f5f3ed;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.work-hero {
+  position: relative;
+  width: 100%;
+  min-height: 680px;
+  padding: 110px 8% 100px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 65px;
+  isolation: isolate;
+}
+
+.work-hero::before {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  top: 10%;
+  left: -220px;
+  border-radius: 50%;
+  background: rgba(255, 212, 92, 0.06);
+  filter: blur(70px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* =========================
+   HERO TEXT
+========================= */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+  color: #ffd45c;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.hero-eyebrow span {
+  color: #ff5149;
+  font-size: 17px;
+}
+
+.hero-content h1 {
+  font-size: clamp(42px, 5.2vw, 76px);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -3px;
+  color: #f5f3ed;
+}
+
+.hero-content h1 span {
+  color: #ffd45c;
+}
+
+.hero-description {
+  max-width: 460px;
+  margin-top: 25px;
+  color: rgba(245, 243, 237, 0.72);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* =========================
+   HERO BUTTONS
+========================= */
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.hero-btn {
+  min-height: 50px;
+  padding: 0 21px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.hero-btn span {
+  font-size: 17px;
+}
+
+.primary-btn {
+  background: #ff5149;
+  border: 1px solid #ff5149;
+  color: #ffffff;
+}
+
+.primary-btn:hover {
+  background: #ffd45c;
+  border-color: #ffd45c;
+  color: #0d3f42;
+  transform: translateY(-3px);
+}
+
+.secondary-btn {
+  border: 1px solid rgba(245, 243, 237, 0.35);
+  color: #f5f3ed;
+}
+
+.secondary-btn:hover {
+  border-color: #ffd45c;
+  color: #ffd45c;
+  transform: translateY(-3px);
+}
+
+/* =========================
+   HERO STATS
+========================= */
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 55px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(245, 243, 237, 0.16);
+}
+
+.hero-stats h2 {
+  color: #ffd45c;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.hero-stats p {
+  margin-top: 7px;
+  color: rgba(245, 243, 237, 0.6);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 530px;
+  justify-self: end;
+}
+
+.visual-frame {
+  position: relative;
+  min-height: 420px;
+  padding: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(255, 212, 92, 0.13),
+      transparent 48%
+    ),
+    linear-gradient(145deg, #155054, #092e31);
+  border: 1px solid rgba(245, 243, 237, 0.18);
+}
+
+.visual-frame::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(245, 243, 237, 0.1);
+  pointer-events: none;
+}
+
+.visual-frame::after {
+  content: "RE";
+  position: absolute;
+  right: -18px;
+  bottom: 15px;
+  color: rgba(245, 243, 237, 0.035);
+  font-size: 190px;
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.visual-top,
+.visual-bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: rgba(245, 243, 237, 0.65);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.visual-center {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 35px 0;
+  text-align: center;
+}
+
+.play-symbol {
+  width: 86px;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5px;
+  border: 1px solid rgba(255, 212, 92, 0.75);
+  border-radius: 50%;
+  color: #0d3f42;
+  background: #ffd45c;
+  font-size: 23px;
+  box-shadow: 0 0 50px rgba(255, 212, 92, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.visual-frame:hover .play-symbol {
+  transform: scale(1.08);
+}
+
+.visual-center p {
+  color: #f5f3ed;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.visual-tag {
+  position: absolute;
+  right: -18px;
+  bottom: -19px;
+  padding: 15px 22px;
+  background: #ffd45c;
+  color: #0d3f42;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  transform: rotate(-3deg);
+}
+
+/* =========================
+   SHOWCASE SECTION
+========================= */
+
+.work-showcase {
+  padding: 85px 8% 110px;
+  background: #f5f3ed;
+  color: #0d3f42;
+}
+
+.showcase-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 35px;
+  margin-bottom: 42px;
+}
+
+.section-eyebrow {
+  margin-bottom: 13px;
+  color: #e44b43;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.showcase-heading h2 {
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.showcase-heading h2 span {
+  color: #ff5149;
+}
+
+.showcase-description {
+  max-width: 330px;
+  color: rgba(13, 63, 66, 0.72);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================
+   INFINITE VIDEO CAROUSEL
+   (single set of rules - no duplicates)
+
+   Structure in Work.jsx:
+   .video-marquee
+     .video-marquee-track
+       .video-marquee-group  (x2, identical)
+         .marquee-video
+========================= */
+
+.video-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 15px 0 25px;
+}
+
+/* The track holds both groups side by side */
+.video-marquee-track {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  animation: videoMarqueeMove 60s linear infinite;
+  will-change: transform;
+}
+
+/* Each group is one full row of videos (left to right) */
+.video-marquee-group {
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 auto;
+  gap: 20px;
+  padding-right: 20px; /* must equal gap so the loop has no jump */
+}
+
+.marquee-video {
+  position: relative;
+  flex: 0 0 300px;
+  width: 300px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #071f21;
+  border: 1px solid rgba(13, 63, 66, 0.2);
+}
+
+.marquee-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.marquee-video-number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 6px 9px;
+  background: #ffd45c;
+  color: #0d3f42;
+  font-size: 10px;
+  font-weight: 800;
+  pointer-events: none;
+}
+
+/* Videos slide from left to right.
+   To go right to left, swap the from / to values. */
+@keyframes videoMarqueeMove {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Pause when hovered */
+.video-marquee:hover .video-marquee-track {
+  animation-play-state: paused;
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .work-hero {
+    grid-template-columns: 1fr 0.85fr;
+    gap: 35px;
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(40px, 5.5vw, 60px);
+    letter-spacing: -2px;
+  }
+
+  .visual-frame {
+    min-height: 350px;
+  }
+
+  .hero-stats {
+    gap: 30px;
+  }
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .work-hero {
+    min-height: auto;
+    padding: 65px 6% 75px;
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(42px, 11vw, 65px);
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .hero-btn {
+    min-height: 47px;
+    padding: 0 14px;
+    gap: 10px;
+    font-size: 10px;
+  }
+
+  .hero-stats {
+    gap: 35px;
+    margin-top: 40px;
+  }
+
+  .hero-stats h2 {
+    font-size: 22px;
+  }
+
+  .hero-visual {
+    width: calc(100% - 12px);
+    justify-self: start;
+    margin-bottom: 12px;
+  }
+
+  .visual-frame {
+    min-height: 330px;
+    padding: 20px;
+  }
+
+  .visual-tag {
+    right: -8px;
+    bottom: -14px;
+    padding: 12px 15px;
+    font-size: 9px;
+  }
+
+  .work-showcase {
+    padding: 65px 6% 80px;
+  }
+
+  .showcase-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 30px;
+  }
+
+  /* carousel on mobile */
+  .video-marquee-group {
+    gap: 14px;
+    padding-right: 14px;
+  }
+
+  .marquee-video {
+    flex-basis: 260px;
+    width: 260px;
+  }
+
+  .video-marquee-track {
+    animation-duration: 45s;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+  .hero-content h1 {
+    font-size: 39px;
+  }
+
+  .hero-stats {
+    gap: 25px;
+  }
+
+  .hero-btn {
+    padding: 0 11px;
+    font-size: 9px;
+  }
+
+  .visual-frame {
+    min-height: 290px;
+  }
+
+  .marquee-video {
+    flex-basis: 230px;
+    width: 230px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+   (kept LAST so nothing overrides it)
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .video-marquee-track {
+    animation: none;
+    transform: none;
+  }
+
+  .video-marquee {
+    overflow-x: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ===== VERTICAL CAROUSEL: moves bottom to top ===== */
+
+.video-marquee {
+  height: 640px;               /* visible window height, change as you like */
+  padding: 0;
+  overflow: hidden;
+}
+
+.video-marquee-track {
+  flex-direction: column;      /* groups stack top to bottom */
+  align-items: center;         /* centers the column */
+  width: 100%;
+  height: max-content;
+  animation: videoMarqueeUp 40s linear infinite;
+}
+
+.video-marquee-group {
+  flex-direction: column;      /* videos stack top to bottom */
+  gap: 20px;
+  padding-right: 0;
+  padding-bottom: 20px;        /* must equal gap so the loop has no jump */
+}
+
+@keyframes videoMarqueeUp {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }   /* moves up, then repeats */
+}
+
+@media (max-width: 700px) {
+  .video-marquee {
+    height: 520px;
+  }
+
+  .video-marquee-group {
+    gap: 14px;
+    padding-bottom: 14px;
+  }
+
+  .video-marquee-track {
+    animation-duration: 30s;
+  }
+}

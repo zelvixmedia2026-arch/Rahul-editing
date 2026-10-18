@@ -1,0 +1,190 @@
+.navbar {
+  width: 100%;
+  background: #0d3f42;
+  border-bottom: 1px solid rgba(245, 243, 237, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  will-change: transform;          /* own GPU layer, so moving videos below don't make it repaint */
+  animation: navbarFade 0.7s ease both;
+}
+
+.navbar-inner {
+  max-width: 1400px;
+  min-height: 88px;
+  margin: 0 auto;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.navbar-logo {
+  color: #f5f3ed;
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: -0.8px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* Typing effect uses clip-path (no layout work) instead of width */
+.logo-typing {
+  display: inline-block;
+  vertical-align: bottom;
+  clip-path: inset(0 100% 0 0);
+  animation: logoTyping 1.1s steps(13, end) 0.3s forwards;
+}
+
+.logo-dot {
+  color: #ffd45c;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+
+.nav-link {
+  position: relative;
+  color: #d5e0dc;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 0;
+  cursor: pointer;
+  animation: linkFade 0.5s ease both;   /* "both" hides it during the delay, so no opacity: 0 needed */
+  animation-delay: calc(0.55s + var(--link-index) * 0.15s);
+  transition: color 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffd45c;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ffd45c;
+}
+
+/* Keyboard users get a visible outline */
+.nav-link:focus-visible,
+.navbar-logo:focus-visible,
+.menu-toggle:focus-visible {
+  outline: 2px solid #ffd45c;
+  outline-offset: 4px;
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #f5f3ed;
+  font-size: 27px;
+  cursor: pointer;
+  padding: 5px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes navbarFade {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logoTyping {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes linkFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Tablet: 5 links need a little less space between them ===== */
+
+@media (max-width: 1000px) {
+  .nav-links {
+    gap: 26px;
+  }
+}
+
+/* ===== Mobile menu ===== */
+
+@media (max-width: 768px) {
+  .navbar-inner {
+    min-height: 74px;
+    padding: 0 6%;
+  }
+
+  .navbar-logo {
+    font-size: 18px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 18px 6% 24px;
+    background: #0d3f42;
+    border-bottom: 1px solid rgba(245, 243, 237, 0.12);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 12px 0;               /* bigger tap area on phones */
+  }
+
+  .nav-links.open .nav-link {
+    animation: linkFade 0.35s ease both;
+    animation-delay: calc(var(--link-index) * 0.1s);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .logo-typing,
+  .nav-link {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+}

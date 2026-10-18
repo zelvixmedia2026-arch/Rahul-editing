@@ -1,0 +1,69 @@
+
+.video-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #10383a;
+  border: 1px solid rgba(245, 243, 237, 0.12);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffd45c;
+}
+
+.video-card-media {
+  position: relative;
+  overflow: hidden;
+  background: #071f21;
+  aspect-ratio: 16 / 9;
+}
+
+.video-card-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-card-number {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 9px;
+  background: #ffd45c;
+  color: #0d3f42;
+  font-size: 10px;
+  font-weight: 800;
+  pointer-events: none;
+}
+
+.video-card-info {
+  padding: 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.video-card-info h3 {
+  color: #f5f3ed;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.video-card-info > span {
+  color: #ffd45c;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .video-card-info {
+    padding: 12px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
